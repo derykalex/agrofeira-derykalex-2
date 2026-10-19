@@ -1,0 +1,42 @@
+/* reset.css — AgroFeira, encontro 3 */
+
+/* 1. A largura declarada inclui preenchimento e borda */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Nenhuma margem de fábrica: o espaço é decisão sua */
+* {
+  margin: 0;
+}
+
+/* 3. Linhas com folga para ler */
+body {
+  line-height: 1.5;
+}
+
+/* 4. Imagem nunca maior que o espaço dela */
+img,
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 5. Campo e botão com a mesma letra do texto */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 6. Palavra comprida quebra, em vez de estourar */
+p,
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}

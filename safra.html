@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgroFeira - Safra</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <a class="pular" href="#conteudo-principal">Pular para o conteúdo</a>
+
+  <header class="cabecalho-site">
+    <h1>AgroFeira</h1>
+    <nav aria-label="Principal">
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="safra.html" aria-current="page">Safra</a></li>
+        <li><a href="cadastro-produtor.html">Cadastro de produtor</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo-principal">
+    <h2>Calendário de Safra dos Produtos</h2>
+    <p id="legenda-tabela">Disponibilidade dos produtos da agricultura familiar nos primeiros meses do ano (cheio = alta oferta, meia = oferta moderada, vazio = em falta).</p>
+
+    <table class="tabela-safra" aria-describedby="legenda-tabela">
+      <caption>Disponibilidade mensal de produtos</caption>
+      <thead>
+        <tr>
+          <th scope="col">Produto</th>
+          <th scope="col">Jan</th>
+          <th scope="col">Fev</th>
+          <th scope="col">Mar</th>
+          <th scope="col">Abr</th>
+          <th scope="col">Mai</th>
+          <th scope="col">Jun</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Mandioca</th>
+          <td>cheio</td>
+          <td>cheio</td>
+          <td>cheio</td>
+          <td>cheio</td>
+          <td>cheio</td>
+          <td>cheio</td>
+        </tr>
+        <tr>
+          <th scope="row">Banana-prata</th>
+          <td>cheio</td>
+          <td>cheio</td>
+          <td>meia</td>
+          <td>meia</td>
+          <td>cheio</td>
+          <td>cheio</td>
+        </tr>
+        <tr>
+          <th scope="row">Açaí</th>
+          <td>meia</td>
+          <td>vazio</td>
+          <td>vazio</td>
+          <td>vazio</td>
+          <td>meia</td>
+          <td>cheio</td>
+        </tr>
+        <tr>
+          <th scope="row">Pimenta-do-reino</th>
+          <td>vazio</td>
+          <td>vazio</td>
+          <td>vazio</td>
+          <td>meia</td>
+          <td>cheio</td>
+          <td>cheio</td>
+        </tr>
+        <tr>
+          <th scope="row">Cupuaçu</th>
+          <td>cheio</td>
+          <td>cheio</td>
+          <td>cheio</td>
+          <td>meia</td>
+          <td>vazio</td>
+          <td>vazio</td>
+        </tr>
+        <tr>
+          <th scope="row">Alface</th>
+          <td>meia</td>
+          <td>meia</td>
+          <td>cheio</td>
+          <td>cheio</td>
+          <td>cheio</td>
+          <td>cheio</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer class="rodape-site">
+    <p>&copy; 2026 AgroFeira - Paragominas, Pará</p>
+  </footer>
+
+</body>
+</html>

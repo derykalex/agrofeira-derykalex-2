@@ -1,0 +1,23 @@
+/* Customização do Bootstrap com os tokens do AgroFeira */
+:root {
+  --bs-body-bg: var(--cor-fundo);
+  --bs-body-color: var(--cor-texto);
+  --bs-secondary-color: var(--cor-texto-suave);
+  --bs-body-font-family: var(--fonte-texto);
+  --bs-border-radius: var(--raio);
+  --bs-link-color-rgb: var(--cor-marca-rgb);
+  --bs-link-hover-color-rgb: var(--cor-marca-forte-rgb);
+
+  /* Variáveis do botão primário do Bootstrap */
+  --bs-btn-bg: var(--cor-marca);
+  --bs-btn-border-color: var(--cor-marca);
+  --bs-btn-color: var(--cor-sobre-marca);
+  
+  --bs-btn-hover-bg: var(--cor-marca-forte);
+  --bs-btn-hover-border-color: var(--cor-marca-forte);
+  --bs-btn-hover-color: var(--cor-sobre-marca);
+
+  --bs-btn-active-bg: var(--cor-marca-forte);
+  --bs-btn-active-border-color: var(--cor-marca-forte);
+  --bs-btn-active-color: var(--cor-sobre-marca);
+}

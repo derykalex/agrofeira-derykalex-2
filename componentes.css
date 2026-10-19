@@ -1,0 +1,212 @@
+@layer componentes {
+  .cabecalho-site {
+    background-color: var(--cor-marca);
+    color: var(--cor-sobre-marca);
+    padding: var(--espaco-2);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .cabecalho-site :focus-visible {
+    outline-color: var(--cor-sobre-marca);
+  }
+
+  nav {
+    background-color: var(--cor-marca);
+    padding: var(--espaco-2);
+    border-radius: var(--raio);
+  }
+
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaco-2);
+  }
+
+  .menu a {
+    color: var(--cor-sobre-marca);
+    text-decoration: none;
+  }
+
+  .menu a[aria-current="page"] {
+    font-weight: 700;
+  }
+
+  .rodape-site {
+    border-top: 1px solid var(--cor-borda);
+    color: var(--cor-texto-suave);
+    padding: var(--espaco-2);
+  }
+
+  .pular {
+    position: absolute;
+    top: -10rem;
+    left: var(--espaco-1);
+    z-index: 2;
+    background-color: var(--cor-superficie);
+    color: var(--cor-marca);
+    padding: var(--espaco-1) var(--espaco-2);
+    border-radius: var(--raio);
+    text-decoration: none;
+  }
+
+  .pular:focus-visible {
+    top: var(--espaco-1);
+    outline-color: var(--cor-sobre-marca);
+  }
+
+  .barra-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaco-1);
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--espaco-3);
+  }
+
+  .lista-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+    gap: var(--espaco-2);
+    list-style: none;
+    padding: 0;
+  }
+
+  .cartao-produto {
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    padding: var(--espaco-2);
+    container-type: inline-size;
+    transition: transform 200ms ease-out, border-color 200ms ease-out;
+  }
+
+  .destaque {
+    grid-column: 1 / -1;
+  }
+
+  .cartao-produto article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--espaco-1);
+    position: relative;
+  }
+
+  .cartao-produto h3 {
+    margin: 0;
+  }
+
+  .produtor {
+    color: var(--cor-texto-suave);
+    margin: 0;
+    font-size: 0.875rem;
+  }
+
+  .preco {
+    font-weight: 700;
+    margin: 0;
+  }
+
+  button, .busca button {
+    background-color: var(--cor-marca);
+    color: var(--cor-sobre-marca);
+    border: none;
+    border-radius: var(--raio);
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: background-color 200ms ease-out;
+  }
+
+  button:hover, .busca button:hover {
+    background-color: var(--cor-marca-forte);
+  }
+
+  button:disabled {
+    background-color: var(--cor-desligado);
+    color: var(--cor-sobre-desligado);
+  }
+
+  /* Container query - deita o cartão quando o espaço passa de 26rem */
+  @container (min-width: 26rem) {
+    .cartao-produto article {
+      display: grid;
+      grid-template-columns: 10rem 1fr;
+      gap: var(--espaco-2);
+    }
+    .cartao-produto img {
+      grid-row: span 3;
+      max-width: 100%;
+      height: auto;
+    }
+    .cartao-produto button {
+      grid-column: 1;
+    }
+  }
+
+  .formulario-cadastro input,
+  .formulario-cadastro select,
+  .formulario-cadastro textarea {
+    border: 2px solid var(--cor-texto-suave);
+    border-radius: var(--raio);
+    padding: 0.25em 0.5em;
+    width: 100%;
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto);
+  }
+
+  .formulario-cadastro input:user-invalid {
+    border: 2px solid var(--cor-erro);
+  }
+
+  .formulario-cadastro input[required]:user-valid {
+    border: 2px solid var(--cor-marca);
+  }
+
+  .formulario-cadastro p:has(input:user-invalid) {
+    color: var(--cor-erro);
+    outline: 2px solid var(--cor-erro);
+    outline-offset: 4px;
+  }
+
+  .cartao-produto:has(button:focus-visible) {
+    outline: 2px solid var(--cor-foco);
+  }
+
+  .cartao-produto:hover,
+  .cartao-produto:has(button:focus-visible) {
+    transform: translateY(-0.5rem);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cartao-produto:hover,
+    .cartao-produto:has(button:focus-visible) {
+      transform: none;
+      border-color: var(--cor-marca);
+    }
+  }
+
+  .busca {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaco-1);
+  }
+
+  .busca label {
+    width: 100%;
+  }
+
+  .busca input {
+    flex: 1;
+    border: 2px solid var(--cor-texto-suave);
+    border-radius: var(--raio);
+    padding: 0.25em 0.5em;
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto);
+  }
+}

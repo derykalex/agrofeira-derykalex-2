@@ -1,0 +1,70 @@
+@layer base {
+  body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-texto);
+    font-size: var(--tamanho-texto);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+  }
+
+  h1 { font-size: var(--tamanho-h1); }
+  h2 { font-size: var(--tamanho-h2); margin-top: 2rem; margin-bottom: 0.5rem; }
+  h3 { font-size: var(--tamanho-h3); margin-top: 1rem; }
+
+  p {
+    max-width: 34rem;
+    margin-bottom: 1rem;
+    overflow-wrap: break-word;
+  }
+
+  img, picture {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+  /* Casca da página - Grelha Mobile-First */
+  body.pagina-catalogo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "cabecalho"
+      "menu"
+      "conteudo"
+      "lateral"
+      "rodape";
+    gap: var(--espaco-2);
+    padding: var(--espaco-2);
+  }
+
+  .pagina-catalogo .cabecalho-site { grid-area: cabecalho; }
+  .pagina-catalogo nav { grid-area: menu; }
+  .pagina-catalogo main { grid-area: conteudo; }
+  .pagina-catalogo aside { grid-area: lateral; }
+  .pagina-catalogo .rodape-site { grid-area: rodape; }
+
+  @media (min-width: 42rem) {
+    body.pagina-catalogo {
+      grid-template-columns: 10rem minmax(0, 1fr) 14rem;
+      grid-template-areas:
+        "cabecalho cabecalho cabecalho"
+        "menu      conteudo    lateral"
+        "rodape    rodape      rodape";
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--cor-foco);
+    outline-offset: 2px;
+  }
+}

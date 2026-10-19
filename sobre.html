@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgroFeira - Sobre</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  
+  <!-- Folhas de estilo em camadas -->
+  <link rel="stylesheet" href="camadas.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="componentes.css">
+  <link rel="stylesheet" href="utilitarios.css">
+</head>
+<body>
+  <!-- Link de pular -->
+  <a class="pular" href="#conteudo-sobre">Pular para o conteúdo</a>
+
+  <header class="cabecalho-site">
+    <h1>AgroFeira</h1>
+  </header>
+
+  <!-- Navegação com o item Catálogo incluído -->
+  <nav aria-label="Principal">
+    <ul class="menu">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="safra.html">Safra</a></li>
+      <li><a href="cadastro-produtor.html">Cadastro de produtor</a></li>
+      <li><a href="sobre.html" aria-current="page">Sobre</a></li>
+    </ul>
+  </nav>
+
+  <main id="conteudo-sobre">
+    <h2>Sobre a AgroFeira</h2>
+    
+    <!-- Depoimento (Article) -->
+    <article>
+      <h3>Palavra do produtor</h3>
+      <figure>
+        <img src="cupuacu.jpg" alt="Fruto de cupuaçu partido ao meio mostrando polpa e sementes" width="330" height="247" loading="lazy">
+        <figcaption>Foto: BjoernS, CC BY-SA 2.0 DE, via Wikimedia Commons.</figcaption>
+      </figure>
+      <blockquote>
+        <p>"Direto do produtor, sem atravessador. O preço é justo para quem consome e para quem cultiva."</p>
+      </blockquote>
+    </article>
+
+    <!-- Como vender na feira (Passo a passo ordenado) -->
+    <section>
+      <h3>Como vender na feira</h3>
+      <ol>
+        <li>Faça o cadastro online com seus dados e número do CAF.</li>
+        <li>Aguarde a validação da comissão da feira.</li>
+        <li>Traga seus produtos nas sextas-feiras pela manhã.</li>
+      </ol>
+    </section>
+
+    <!-- Glossário (Lista de Definição) -->
+    <section>
+      <h3>Glossário de termos</h3>
+      <dl>
+        <dt>Saca</dt>
+        <dd>Unidade tradicional de medida correspondente a 60 kg.</dd>
+        <dt>Cacho</dt>
+        <dd>Forma de comercialização em massa para bananas e outras frutas.</dd>
+        <dt>Rasa</dt>
+        <dd>Medida tradicional usada para a comercialização de açaí na região.</dd>
+      </dl>
+    </section>
+
+    <!-- Perguntas Frequentes (Acordeão Nativo) -->
+    <section>
+      <h3>Perguntas frequentes</h3>
+      <details name="faq">
+        <summary>Como funciona a entrega?</summary>
+        <p>A retirada é feita diretamente na praça central, toda sexta das 6h às 11h.</p>
+      </details>
+      <details name="faq">
+        <summary>Preciso ter CNPJ para vender?</summary>
+        <p>Não, basta possuir a declaração da agricultura familiar (CAF).</p>
+      </details>
+      <details name="faq">
+        <summary>Aceita cartão?</summary>
+        <p>Muitos produtores aceitam PIX e cartão, mas é recomendável trazer dinheiro trocado.</p>
+      </details>
+    </section>
+
+    <!-- Imagem Decorativa com alt vazio -->
+    <img src="enfeite.png" alt="">
+  </main>
+
+  <footer class="rodape-site">
+    <p>AgroFeira — da roça para a mesa, em Paragominas.</p>
+  </footer>
+</body>
+</html>

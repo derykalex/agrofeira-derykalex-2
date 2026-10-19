@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgroFeira - Início</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  
+  <!-- Folhas de estilo em camadas (Ordem estrita) -->
+  <link rel="stylesheet" href="camadas.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="componentes.css">
+  <link rel="stylesheet" href="utilitarios.css">
+</head>
+<body>
+  <!-- Link de pular para o conteúdo acessível -->
+  <a class="pular" href="#conteudo-principal">Pular para o conteúdo</a>
+
+  <!-- Cabeçalho do site -->
+  <header class="cabecalho-site">
+    <h1>AgroFeira</h1>
+  </header>
+
+  <!-- Navegação principal com o item Catálogo incluído -->
+  <nav aria-label="Principal">
+    <ul class="menu">
+      <li><a href="index.html" aria-current="page">Início</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="safra.html">Safra</a></li>
+      <li><a href="cadastro-produtor.html">Cadastro de produtor</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <main id="conteudo-principal">
+    <section id="apresentacao">
+      <h2>Apresentação da Feira</h2>
+      <p>A AgroFeira reúne produtores da agricultura familiar da Colônia do Uraim e dos assentamentos da bacia do Uraim. Cada um traz o <strong>que colheu</strong> na semana e vende direto a quem come, sem atravessador, toda sexta, na praça central.</p>
+    </section>
+
+    <!-- Figura responsiva -->
+    <figure class="figura-destaque">
+      <picture>
+        <source srcset="feira-1280.jpg 1280w, feira-330.jpg 330w" sizes="(min-width: 42rem) 50vw, 100vw">
+        <img src="feira-330.jpg" alt="Barraca de frutas e legumes numa feira livre" width="1280" height="960" loading="eager">
+      </picture>
+      <figcaption>Barraca na praça central. Foto: Rayelle da Silva Freitas, CC BY-SA 4.0, via Wikimedia Commons.</figcaption>
+    </figure>
+
+    <!-- Região de Busca -->
+    <search>
+      <form class="busca">
+        <label for="q">Procurar produto</label>
+        <input type="search" id="q" name="q">
+        <button type="submit">
+          <img src="lupa.png" alt="Buscar" width="20" height="20">
+        </button>
+      </form>
+    </search>
+
+    <!-- Seção de Produtos -->
+    <section id="produtos">
+      <h2>Produtos da semana</h2>
+      <ul class="lista-produtos">
+        <li class="cartao-produto">Mandioca, na saca de 60 kg</li>
+        <li class="cartao-produto">Banana-prata, no cacho</li>
+        <li class="cartao-produto">Açaí, na rasa</li>
+        <li class="cartao-produto">Pimenta-do-reino, no quilo</li>
+        <li class="cartao-produto">Cupuaçu, no quilo</li>
+        <li class="cartao-produto">Alface, no maço</li>
+      </ul>
+    </section>
+
+    <!-- Caixa de Aviso -->
+    <div class="aviso">
+      <p><strong>Atenção:</strong> Os preços mudam toda semana conforme a safra dos produtores.</p>
+    </div>
+
+    <!-- Conteúdo Relacionado -->
+    <aside>
+      <h2>Onde e quando</h2>
+      <p>Praça central de Paragominas, toda sexta, das 6h às 11h.</p>
+    </aside>
+  </main>
+
+  <!-- Rodapé do site -->
+  <footer class="rodape-site">
+    <p>AgroFeira — da roça para a mesa, em Paragominas.</p>
+  </footer>
+</body>
+</html>

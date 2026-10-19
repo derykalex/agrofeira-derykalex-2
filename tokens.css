@@ -1,0 +1,40 @@
+@layer base {
+  :root {
+    --cor-fundo: #f4f0f8;
+    --cor-texto: #2d2335;
+    --cor-texto-suave: #6b5b7b;
+    --cor-borda: #dcd0e8;
+    --cor-marca: #5b2a86;
+    --cor-marca-forte: #3f1b61;
+    --cor-sobre-marca: #ffffff;
+    --cor-foco: #1d4ed8;
+
+    /* Trios RGB para o Bootstrap (tema claro) */
+    --cor-marca-rgb: 91, 42, 134;
+    --cor-marca-forte-rgb: 63, 27, 97;
+
+    --fonte-texto: system-ui, sans-serif;
+    --fonte-titulo: "Lora", serif;
+    --tamanho-texto: 1rem;
+    --tamanho-h3: 1.25rem;
+    --tamanho-h2: 1.563rem;
+    --raio: 0.5rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --cor-fundo: #1a1520;
+      --cor-texto: #e2d9ec;
+      --cor-texto-suave: #b3a4c4;
+      --cor-borda: #3b2e4d;
+      --cor-marca: #7c3aed;
+      --cor-marca-forte: #9333ea;
+      --cor-sobre-marca: #ffffff;
+      --cor-foco: #3b82f6;
+
+      /* Trios RGB para o Bootstrap (tema escuro) */
+      --cor-marca-rgb: 124, 58, 237;
+      --cor-marca-forte-rgb: 147, 51, 234;
+    }
+  }
+}

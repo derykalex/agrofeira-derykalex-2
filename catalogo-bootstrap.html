@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catálogo Profissional - AgroFeira</title>
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRI14kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body class="bg-light">
+    
+    <div class="container py-4">
+      
+      <!-- Cabeçalho Profissional com Botão do Carrinho -->
+      <header class="d-flex justify-content-between align-items-center py-3 mb-4 border-bottom">
+        <h1 class="display-6 fw-bold text-success mb-0">AgroFeira</h1>
+        <div class="d-flex align-items-center gap-3">
+          <a href="index.html" class="text-decoration-none text-secondary">Início</a>
+          <a href="sobre.html" class="text-decoration-none text-secondary">Sobre</a>
+          <!-- Botão do Carrinho com Contador Dinâmico -->
+          <button class="btn btn-outline-success position-relative" data-bs-toggle="modal" data-bs-target="#modalCarrinho">
+            🛒 Carrinho <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Grade Principal e Lateral (Mais Pedidos) -->
+      <div class="row g-4">
+        
+        <!-- Conteúdo Principal (Catálogo de Produtos) -->
+        <main class="col-lg-9">
+          <!-- Faixa de Alerta -->
+          <div class="alert alert-warning shadow-sm" role="alert">
+            <strong>Atenção:</strong> Entregas só às sextas-feiras. Pedidos até quinta, às 18h.
+          </div>
+
+          <h2 class="h4 mb-2">Produtos da semana</h2>
+          <p class="text-muted mb-4">O que chegou das colônias de Paragominas nesta semana.</p>
+
+          <!-- Lista de Produtos em Grade Responsiva -->
+          <ul class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3 list-unstyled">
+            
+            <!-- 1. Açaí Médio -->
+            <li class="col">
+              <article class="card h-100 shadow-sm border-0">
+                <img src="acai.jpg" class="card-img-top img-fluid" width="640" height="480" alt="Tigela de açaí batido">
+                <div class="card-body d-flex flex-column">
+                  <p class="badge text-bg-success align-self-start mb-2">Safra nova</p>
+                  <h3 class="card-title h5">Açaí médio</h3>
+                  <p class="card-text text-body-secondary small">Sítio Boa Vista, Colônia do Uraim</p>
+                  <p class="card-text fw-bold text-success mt-auto">R$ 12,00 o litro</p>
+                  <button type="button" class="btn btn-primary w-100 mt-2" onclick="cart.adicionarProduto({id: 'acai', nome: 'Açaí médio', preco: 12.00})">Adicionar</button>
+                </div>
+              </article>
+            </li>
+
+            <!-- 2. Farinha d'água -->
+            <li class="col">
+              <article class="card h-100 shadow-sm border-0">
+                <img src="farinha.jpg" class="card-img-top img-fluid" width="640" height="480" alt="Farinha d'água">
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title h5">Farinha d'água</h3>
+                  <p class="card-text text-body-secondary small">Casa de Farinha São José, Comunidade Nova Vida</p>
+                  <p class="card-text fw-bold text-success mt-auto">R$ 90,00 a lata</p>
+                  <button type="button" class="btn btn-primary w-100 mt-2" onclick="cart.adicionarProduto({id: 'farinha', nome: 'Farinha d\'água', preco: 90.00})">Adicionar</button>
+                </div>
+              </article>
+            </li>
+
+            <!-- 3. Banana-prata -->
+            <li class="col">
+              <article class="card h-100 shadow-sm border-0">
+                <img src="banana.jpg" class="card-img-top img-fluid" width="640" height="480" alt="Banana-prata">
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title h5">Banana-prata</h3>
+                  <p class="card-text text-body-secondary small">Sítio Três Irmãos, Colônia do Uraim</p>
+                  <p class="card-text fw-bold text-success mt-auto">R$ 8,00 a dúzia</p>
+                  <button type="button" class="btn btn-primary w-100 mt-2" onclick="cart.adicionarProduto({id: 'banana', nome: 'Banana-prata', preco: 8.00})">Adicionar</button>
+                </div>
+              </article>
+            </li>
+
+            <!-- 4. Pimenta-de-cheiro -->
+            <li class="col">
+              <article class="card h-100 shadow-sm border-0">
+                <img src="pimenta.jpg" class="card-img-top img-fluid" width="640" height="480" alt="Pimenta-de-cheiro">
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title h5">Pimenta-de-cheiro</h3>
+                  <p class="card-text text-body-secondary small">Horta Comunitária Jaderlândia</p>
+                  <p class="card-text fw-bold text-success mt-auto">R$ 10,00 o quilo</p>
+                  <button type="button" class="btn btn-primary w-100 mt-2" onclick="cart.adicionarProduto({id: 'pimenta', nome: 'Pimenta-de-cheiro', preco: 10.00})">Adicionar</button>
+                </div>
+              </article>
+            </li>
+
+            <!-- 5. Cacau -->
+            <li class="col">
+              <article class="card h-100 shadow-sm border-0">
+                <img src="cacau.jpg" class="card-img-top img-fluid" width="640" height="480" alt="Cacau">
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title h5">Cacau</h3>
+                  <p class="card-text text-body-secondary small">Colônia Nova Conquista</p>
+                  <p class="card-text fw-bold text-success mt-auto">R$ 15,00 o quilo</p>
+                  <button type="button" class="btn btn-primary w-100 mt-2" onclick="cart.adicionarProduto({id: 'cacau', nome: 'Cacau', preco: 15.00})">Adicionar</button>
+                </div>
+              </article>
+            </li>
+
+            <!-- 6. Polpa de cupuaçu -->
+            <li class="col">
+              <article class="card h-100 shadow-sm border-0">
+                <img src="cupuacu.jpg" class="card-img-top img-fluid" width="640" height="480" alt="Polpa de cupuaçu">
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title h5">Polpa de cupuaçu</h3>
+                  <p class="card-text text-body-secondary small">Sítio Bela Vista</p>
+                  <p class="card-text fw-bold text-success mt-auto">R$ 20,00 o quilo</p>
+                  <button type="button" class="btn btn-primary w-100 mt-2" onclick="cart.adicionarProduto({id: 'cupuacu', nome: 'Polpa de cupuaçu', preco: 20.00})">Adicionar</button>
+                </div>
+              </article>
+            </li>
+
+            <!-- 7. Jambu -->
+            <li class="col">
+              <article class="card h-100 shadow-sm border-0">
+                <img src="jambu.jpg" class="card-img-top img-fluid" width="640" height="480" alt="Jambu">
+                <div class="card-body d-flex flex-column">
+                  <h3 class="card-title h5">Jambu</h3>
+                  <p class="card-text text-body-secondary small">Horta da Família Silva</p>
+                  <p class="card-text fw-bold text-success mt-auto">R$ 5,00 o maço</p>
+                  <button type="button" class="btn btn-primary w-100 mt-2" onclick="cart.adicionarProduto({id: 'jambu', nome: 'Jambu', preco: 5.00})">Adicionar</button>
+                </div>
+              </article>
+            </li>
+
+          </ul>
+        </main>
+
+        <!-- Coluna Lateral (Mais Pedidos - Visível em Ecrãs Grandes) -->
+        <aside class="col-lg-3 d-none d-lg-block">
+          <div class="card shadow-sm border-0 p-3 bg-white">
+            <h2 class="h5 text-success fw-bold mb-3">Mais pedidos</h2>
+            <ol class="list-group list-group-numbered list-group-flush small">
+              <li class="list-group-item">Açaí médio</li>
+              <li class="list-group-item">Farinha d'água</li>
+              <li class="list-group-item">Polpa de cupuaçu</li>
+            </ol>
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- Rodapé Institucional -->
+      <footer class="py-4 text-body-secondary text-center mt-5 border-top">
+        <p class="mb-1">AgroFeira — Conectando produtores rurais e consumidores em Paragominas, Pará.</p>
+        <small>© 2026 Alex da Silva Oliveira</small>
+      </footer>
+
+    </div>
+
+    <!-- Modal do Carrinho de Compras -->
+    <div class="modal fade" id="modalCarrinho" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title">🛒 O seu Carrinho — AgroFeira</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="cart-items-container">
+              <!-- Itens injetados dinamicamente via JavaScript -->
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between fw-bold fs-5">
+              <span>Total:</span>
+              <span id="cart-total" class="text-success">R$ 0,00</span>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Continuar a Comprar</button>
+            <button type="button" class="btn btn-success px-4" onclick="cart.finalizarCheckoutWhatsApp()">Finalizar via WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap 5.3.8 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Script de Gestão do Carrinho -->
+    <script src="js/carrinho.js"></script>
+  </body>
+</html>
