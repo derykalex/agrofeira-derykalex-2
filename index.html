@@ -1,97 +1,92 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AgroFeira - Início</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  
-  <!-- Folhas de estilo em camadas (Ordem estrita) -->
-  <link rel="stylesheet" href="camadas.css">
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="tokens.css">
-  <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="componentes.css">
-  <link rel="stylesheet" href="utilitarios.css">
-</head>
-<body>
-  <!-- Link de pular para o conteúdo acessível -->
-  <a class="pular" href="#conteudo-principal">Pular para o conteúdo</a>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AgroFeira — Agricultura Familiar em Paragominas</title>
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRI14kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+      body { background-color: #fbf8f1; color: #1f2a1f; font-family: system-ui, sans-serif; }
+      .hero-section { background: linear-gradient(rgba(46, 107, 48, 0.85), rgba(31, 74, 33, 0.9)), url('feira-1200.jpg') center/cover no-repeat; color: white; border-radius: 1rem; }
+      .card-feature { transition: transform 0.2s; border: none; border-radius: 0.75rem; }
+      .card-feature:hover { transform: translateY(-5px); }
+    </style>
+  </head>
+  <body>
 
-  <!-- Cabeçalho do site -->
-  <header class="cabecalho-site">
-    <h1>AgroFeira</h1>
-  </header>
+    <div class="container py-4">
+      
+      <!-- Cabeçalho Institucional Navegável -->
+      <header class="d-flex flex-wrap justify-content-between align-items-center py-3 mb-4 border-bottom">
+        <h1 class="h4 fw-bold text-success mb-0">🌱 AgroFeira</h1>
+        <nav class="d-flex flex-wrap align-items-center gap-3 small">
+          <a href="index.html" class="text-decoration-none text-success fw-bold">Início</a>
+          <a href="catalogo-bootstrap.html" class="text-decoration-none text-secondary">Catálogo E-commerce</a>
+          <a href="safra.html" class="text-decoration-none text-secondary">Calendário de Safra</a>
+          <a href="cadastro-produtor.html" class="text-decoration-none text-secondary">Seja um Produtor</a>
+          <a href="sobre.html" class="text-decoration-none text-secondary">Sobre</a>
+          <a href="painel-produtor.html" class="text-decoration-none text-secondary">Painel Produtor</a>
+          <a href="painel-clientes.html" class="text-decoration-none text-secondary">Minha Conta</a>
+          <a href="contato.html" class="text-decoration-none text-secondary">Contacto</a>
+          <a href="comparativo.html" class="text-decoration-none text-success fw-semibold">Relatório Atividade 5</a>
+        </nav>
+      </header>
 
-  <!-- Navegação principal com o item Catálogo incluído -->
-  <nav aria-label="Principal">
-    <ul class="menu">
-      <li><a href="index.html" aria-current="page">Início</a></li>
-      <li><a href="catalogo.html">Catálogo</a></li>
-      <li><a href="safra.html">Safra</a></li>
-      <li><a href="cadastro-produtor.html">Cadastro de produtor</a></li>
-      <li><a href="sobre.html">Sobre</a></li>
-    </ul>
-  </nav>
+      <!-- Secção de Destaque (Hero) -->
+      <section class="hero-section p-5 mb-5 text-center shadow-sm">
+        <div class="py-5">
+          <h2 class="display-5 fw-bold mb-3">Da Roça para a sua Mesa</h2>
+          <p class="lead mb-4 mx-auto" style="max-width: 700px;">
+            Conectamos diretamente os produtores da agricultura familiar de Paragominas, Pará, com os consumidores locais. Alimentos frescos, saudáveis e com compromisso regional.
+          </p>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="catalogo-bootstrap.html" class="btn btn-light btn-lg text-success fw-bold px-4">Ver Catálogo da Semana</a>
+            <a href="cadastro-produtor.html" class="btn btn-outline-light btn-lg px-4">Cadastrar como Produtor</a>
+          </div>
+        </div>
+      </section>
 
-  <!-- Conteúdo principal -->
-  <main id="conteudo-principal">
-    <section id="apresentacao">
-      <h2>Apresentação da Feira</h2>
-      <p>A AgroFeira reúne produtores da agricultura familiar da Colônia do Uraim e dos assentamentos da bacia do Uraim. Cada um traz o <strong>que colheu</strong> na semana e vende direto a quem come, sem atravessador, toda sexta, na praça central.</p>
-    </section>
+      <!-- Secção de Funcionalidades e Atalhos -->
+      <section class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="card card-feature shadow-sm p-4 h-100 bg-white">
+            <div class="card-body">
+              <h3 class="h5 text-success fw-bold mb-3">🛒 E-commerce Integrado</h3>
+              <p class="text-muted small">Adicione produtos frescos ao carrinho, escolha itens da safra atual e finalize o seu pedido de forma automatizada via WhatsApp.</p>
+              <a href="catalogo-bootstrap.html" class="btn btn-sm btn-outline-success mt-2">Aceder ao Catálogo →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-feature shadow-sm p-4 h-100 bg-white">
+            <div class="card-body">
+              <h3 class="h5 text-success fw-bold mb-3">📅 Calendário de Safra</h3>
+              <p class="text-muted small">Consulte a disponibilidade mensal de produtos típicos da região, como açaí, farinha d'água, cupuaçu, jambu e cacau.</p>
+              <a href="safra.html" class="btn btn-sm btn-outline-success mt-2">Ver Tabela de Safra →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-feature shadow-sm p-4 h-100 bg-white">
+            <div class="card-body">
+              <h3 class="h5 text-success fw-bold mb-3">📊 Documentação & Relatório</h3>
+              <p class="text-muted small">Consulte o relatório técnico completo da Atividade 5 com métricas de desempenho, análise de bytes e comparação com Bootstrap.</p>
+              <a href="comparativo.html" class="btn btn-sm btn-outline-success mt-2">Ver Relatório Técnico →</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <!-- Figura responsiva -->
-    <figure class="figura-destaque">
-      <picture>
-        <source srcset="feira-1280.jpg 1280w, feira-330.jpg 330w" sizes="(min-width: 42rem) 50vw, 100vw">
-        <img src="feira-330.jpg" alt="Barraca de frutas e legumes numa feira livre" width="1280" height="960" loading="eager">
-      </picture>
-      <figcaption>Barraca na praça central. Foto: Rayelle da Silva Freitas, CC BY-SA 4.0, via Wikimedia Commons.</figcaption>
-    </figure>
+      <!-- Rodapé Institucional -->
+      <footer class="py-4 text-center text-muted border-top">
+        <p class="mb-1">AgroFeira — Praça central de Paragominas, Pará, toda sexta-feira, das 6h às 11h.</p>
+        <small>© 2026 Alex da Silva Oliveira | Bacharelado em Sistemas de Informação — UFRA Paragominas</small>
+      </footer>
 
-    <!-- Região de Busca -->
-    <search>
-      <form class="busca">
-        <label for="q">Procurar produto</label>
-        <input type="search" id="q" name="q">
-        <button type="submit">
-          <img src="lupa.png" alt="Buscar" width="20" height="20">
-        </button>
-      </form>
-    </search>
-
-    <!-- Seção de Produtos -->
-    <section id="produtos">
-      <h2>Produtos da semana</h2>
-      <ul class="lista-produtos">
-        <li class="cartao-produto">Mandioca, na saca de 60 kg</li>
-        <li class="cartao-produto">Banana-prata, no cacho</li>
-        <li class="cartao-produto">Açaí, na rasa</li>
-        <li class="cartao-produto">Pimenta-do-reino, no quilo</li>
-        <li class="cartao-produto">Cupuaçu, no quilo</li>
-        <li class="cartao-produto">Alface, no maço</li>
-      </ul>
-    </section>
-
-    <!-- Caixa de Aviso -->
-    <div class="aviso">
-      <p><strong>Atenção:</strong> Os preços mudam toda semana conforme a safra dos produtores.</p>
     </div>
 
-    <!-- Conteúdo Relacionado -->
-    <aside>
-      <h2>Onde e quando</h2>
-      <p>Praça central de Paragominas, toda sexta, das 6h às 11h.</p>
-    </aside>
-  </main>
-
-  <!-- Rodapé do site -->
-  <footer class="rodape-site">
-    <p>AgroFeira — da roça para a mesa, em Paragominas.</p>
-  </footer>
-</body>
+    <!-- Bootstrap 5.3.8 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
 </html>

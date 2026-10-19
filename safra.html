@@ -1,113 +1,89 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AgroFeira - Safra</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="tokens.css">
-  <link rel="stylesheet" href="estilo.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calendário de Safra - AgroFeira</title>
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
 
-  <a class="pular" href="#conteudo-principal">Pular para o conteúdo</a>
+    <div class="container py-4">
+      <!-- Cabeçalho de Navegação -->
+      <header class="d-flex flex-wrap justify-content-between align-items-center py-3 mb-4 border-bottom">
+        <h1 class="h4 fw-bold text-success mb-0">🌱 AgroFeira</h1>
+        <nav class="d-flex flex-wrap align-items-center gap-3 small">
+          <a href="index.html" class="text-decoration-none text-secondary">Início</a>
+          <a href="catalogo-bootstrap.html" class="text-decoration-none text-secondary">Catálogo</a>
+          <a href="safra.html" class="text-decoration-none text-success fw-bold">Calendário de Safra</a>
+          <a href="cadastro-produtor.html" class="text-decoration-none text-secondary">Seja um Produtor</a>
+          <a href="contato.html" class="text-decoration-none text-secondary">Contacto</a>
+        </nav>
+      </header>
 
-  <header class="cabecalho-site">
-    <h1>AgroFeira</h1>
-    <nav aria-label="Principal">
-      <ul class="menu">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="safra.html" aria-current="page">Safra</a></li>
-        <li><a href="cadastro-produtor.html">Cadastro de produtor</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-      </ul>
-    </nav>
-  </header>
+      <!-- Conteúdo Principal -->
+      <main class="mb-5">
+        <div class="text-center mb-5">
+          <h2 class="display-6 fw-bold text-success">Calendário Agrícola e de Safra</h2>
+          <p class="text-muted">Conheça a época de colheita dos principais produtos da agricultura familiar de Paragominas.</p>
+        </div>
 
-  <main id="conteudo-principal">
-    <h2>Calendário de Safra dos Produtos</h2>
-    <p id="legenda-tabela">Disponibilidade dos produtos da agricultura familiar nos primeiros meses do ano (cheio = alta oferta, meia = oferta moderada, vazio = em falta).</p>
+        <div class="card shadow-sm border-0 p-4 bg-white">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle">
+              <thead class="table-success">
+                <tr>
+                  <th>Produto Regional</th>
+                  <th>Período de Safra Principal</th>
+                  <th>Colônias / Origem Destaque</th>
+                  <th>Disponibilidade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Açaí</strong></td>
+                  <td>Janeiro a Dezembro (Safra forte: Julho a Dezembro)</td>
+                  <td>Colônia do Uraim, Sítio Boa Vista</td>
+                  <td><span class="badge bg-success">Alta Disponibilidade</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Farinha d'água</strong></td>
+                  <td>Ano todo (Produção contínua)</td>
+                  <td>Comunidade Nova Vida</td>
+                  <td><span class="badge bg-success">Disponível</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Cupuaçu (Polpa)</strong></td>
+                  <td>Janeiro a Março</td>
+                  <td>Sítio Bela Vista</td>
+                  <td><span class="badge bg-warning text-dark">Safra Sazonal</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Jambu</strong></td>
+                  <td>Ano todo (Cultivo em hortas)</td>
+                  <td>Horta da Família Silva</td>
+                  <td><span class="badge bg-success">Disponível</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Cacau</strong></td>
+                  <td>Março a Junho / Outubro a Dezembro</td>
+                  <td>Colônia Nova Conquista</td>
+                  <td><span class="badge bg-secondary">Sob Consulta</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
 
-    <table class="tabela-safra" aria-describedby="legenda-tabela">
-      <caption>Disponibilidade mensal de produtos</caption>
-      <thead>
-        <tr>
-          <th scope="col">Produto</th>
-          <th scope="col">Jan</th>
-          <th scope="col">Fev</th>
-          <th scope="col">Mar</th>
-          <th scope="col">Abr</th>
-          <th scope="col">Mai</th>
-          <th scope="col">Jun</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">Mandioca</th>
-          <td>cheio</td>
-          <td>cheio</td>
-          <td>cheio</td>
-          <td>cheio</td>
-          <td>cheio</td>
-          <td>cheio</td>
-        </tr>
-        <tr>
-          <th scope="row">Banana-prata</th>
-          <td>cheio</td>
-          <td>cheio</td>
-          <td>meia</td>
-          <td>meia</td>
-          <td>cheio</td>
-          <td>cheio</td>
-        </tr>
-        <tr>
-          <th scope="row">Açaí</th>
-          <td>meia</td>
-          <td>vazio</td>
-          <td>vazio</td>
-          <td>vazio</td>
-          <td>meia</td>
-          <td>cheio</td>
-        </tr>
-        <tr>
-          <th scope="row">Pimenta-do-reino</th>
-          <td>vazio</td>
-          <td>vazio</td>
-          <td>vazio</td>
-          <td>meia</td>
-          <td>cheio</td>
-          <td>cheio</td>
-        </tr>
-        <tr>
-          <th scope="row">Cupuaçu</th>
-          <td>cheio</td>
-          <td>cheio</td>
-          <td>cheio</td>
-          <td>meia</td>
-          <td>vazio</td>
-          <td>vazio</td>
-        </tr>
-        <tr>
-          <th scope="row">Alface</th>
-          <td>meia</td>
-          <td>meia</td>
-          <td>cheio</td>
-          <td>cheio</td>
-          <td>cheio</td>
-          <td>cheio</td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
+      <!-- Rodapé -->
+      <footer class="py-4 text-center text-muted border-top">
+        <p class="mb-1">AgroFeira — Paragominas, Pará.</p>
+        <small>© 2026 Alex da Silva Oliveira</small>
+      </footer>
+    </div>
 
-  <footer class="rodape-site">
-    <p>&copy; 2026 AgroFeira - Paragominas, Pará</p>
-  </footer>
-
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

@@ -11,17 +11,20 @@
     
     <div class="container py-4">
       
-      <!-- Cabeçalho Profissional com Botão do Carrinho -->
-      <header class="d-flex justify-content-between align-items-center py-3 mb-4 border-bottom">
-        <h1 class="display-6 fw-bold text-success mb-0">AgroFeira</h1>
-        <div class="d-flex align-items-center gap-3">
+      <!-- Cabeçalho Profissional com Navegação Completa e Botão do Carrinho -->
+      <header class="d-flex flex-wrap justify-content-between align-items-center py-3 mb-4 border-bottom">
+        <h1 class="h4 fw-bold text-success mb-0">AgroFeira</h1>
+        <nav class="d-flex flex-wrap align-items-center gap-3 small">
           <a href="index.html" class="text-decoration-none text-secondary">Início</a>
-          <a href="sobre.html" class="text-decoration-none text-secondary">Sobre</a>
+          <a href="catalogo-bootstrap.html" class="text-decoration-none text-success fw-bold">Catálogo</a>
+          <a href="painel-produtor.html" class="text-decoration-none text-secondary">Painel Produtor</a>
+          <a href="painel-clientes.html" class="text-decoration-none text-secondary">A minha Conta</a>
+          <a href="contato.html" class="text-decoration-none text-secondary">Contacto</a>
           <!-- Botão do Carrinho com Contador Dinâmico -->
-          <button class="btn btn-outline-success position-relative" data-bs-toggle="modal" data-bs-target="#modalCarrinho">
+          <button class="btn btn-outline-success position-relative btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#modalCarrinho">
             🛒 Carrinho <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
           </button>
-        </div>
+        </nav>
       </header>
 
       <!-- Grade Principal e Lateral (Mais Pedidos) -->
@@ -177,7 +180,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Continuar a Comprar</button>
-            <button type="button" class="btn btn-success px-4" onclick="cart.finalizarCheckoutWhatsApp()">Finalizar via WhatsApp</button>
+            <a href="checkout.html" class="btn btn-success px-4">Avançar para Checkout →</a>
           </div>
         </div>
       </div>

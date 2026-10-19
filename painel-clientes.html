@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Painel do Cliente - AgroFeira</title>
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+
+    <div class="container py-5">
+      <header class="d-flex justify-content-between align-items-center mb-5 pb-3 border-bottom">
+        <div>
+          <h1 class="h3 fw-bold text-success mb-1">Painel do Consumidor</h1>
+          <p class="text-muted mb-0">Acompanhe as suas encomendas e dados cadastrais na AgroFeira</p>
+        </div>
+        <a href="catalogo-bootstrap.html" class="btn btn-outline-success">Ir para o Catálogo →</a>
+      </header>
+
+      <div class="row g-4">
+        <!-- Perfil do Cliente -->
+        <div class="col-lg-4">
+          <div class="card shadow-sm border-0 p-4 bg-white">
+            <h3 class="h5 text-success fw-bold mb-3">👤 Os Meus Dados</h3>
+            <p class="mb-1"><strong>Nome:</strong> <span id="cliente-nome">Alex da Silva Oliveira</span></p>
+            <p class="mb-1"><strong>Cidade:</strong> Paragominas - PA</p>
+            <p class="mb-3"><strong>Bairro:</strong> Jaderlândia / Nova Conquista</p>
+            <button class="btn btn-sm btn-outline-secondary w-100" onclick="alert('Dados atualizados com sucesso!')">Editar Perfil</button>
+          </div>
+        </div>
+
+        <!-- Histórico de Encomendas -->
+        <div class="col-lg-8">
+          <div class="card shadow-sm border-0 p-4 bg-white">
+            <h3 class="h5 text-success fw-bold mb-3">📦 Histórico de Encomendas</h3>
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped align-middle small">
+                <thead class="table-success">
+                  <tr>
+                    <th>ID Pedido</th>
+                    <th>Itens</th>
+                    <th>Total</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#AF-2026-01</td>
+                    <td>Açaí médio (2x), Farinha d'água (1x)</td>
+                    <td>R$ 114,00</td>
+                    <td><span class="badge bg-warning text-dark">Em Separação</span></td>
+                  </tr>
+                  <tr>
+                    <td>#AF-2026-02</td>
+                    <td>Banana-prata (3x), Jambu (2x)</td>
+                    <td>R$ 34,00</td>
+                    <td><span class="badge bg-success">Entregue (Sexta-feira)</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

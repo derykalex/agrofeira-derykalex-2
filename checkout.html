@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Finalizar Encomenda - AgroFeira</title>
+    <!-- Bootstrap 5.3.8 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    
+    <div class="container py-5">
+      <header class="mb-4 text-center">
+        <h1 class="h3 fw-bold text-success">AgroFeira — Finalizar Encomenda</h1>
+        <p class="text-muted">Preencha os dados de entrega para concluir o pedido de produtos da agricultura familiar.</p>
+      </header>
+
+      <div class="row g-5">
+        <!-- Resumo do Carrinho -->
+        <div class="col-md-5 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-success">O seu Carrinho</span>
+            <span class="badge bg-success rounded-pill" id="checkout-count">0</span>
+          </h4>
+          <ul class="list-group mb-3" id="checkout-items-list">
+            <!-- Injetado via JS -->
+          </ul>
+          <div class="list-group-item d-flex justify-content-between bg-white p-3 rounded shadow-sm">
+            <span>Total (BRL)</span>
+            <strong id="checkout-total" class="text-success fs-5">R$ 0,00</strong>
+          </div>
+        </div>
+
+        <!-- Formulário de Dados do Cliente -->
+        <div class="col-md-7">
+          <h4 class="mb-3 text-secondary">Dados de Entrega e Pagamento</h4>
+          <form onsubmit="processarCheckout(event)" class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="nome" class="form-label">Nome Completo</label>
+                <input type="text" class="form-control" id="nome" required placeholder="Ex: Maria da Silva">
+              </div>
+
+              <div class="col-12">
+                <label for="telefone" class="form-label">Telefone / WhatsApp</label>
+                <input type="text" class="form-control" id="telefone" required placeholder="(91) 9XXXX-XXXX">
+              </div>
+
+              <div class="col-12">
+                <label for="endereco" class="form-label">Morada de Entrega em Paragominas</label>
+                <textarea class="form-control" id="endereco" rows="2" required placeholder="Bairro, Rua, Número e Ponto de referência"></textarea>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label">Forma de Pagamento</label>
+                <div class="form-check">
+                  <input id="pix" name="pagamento" type="radio" class="form-check-input" checked required>
+                  <label class="form-check-label" for="pix">PIX (Chave enviada via WhatsApp)</label>
+                </div>
+                <div class="form-check">
+                  <input id="dinheiro" name="pagamento" type="radio" class="form-check-input" required>
+                  <label class="form-check-label" for="dinheiro">Dinheiro na Entrega (Troco)</label>
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="d-flex justify-content-between">
+              <a href="catalogo-bootstrap.html" class="btn btn-outline-secondary">← Voltar ao Catálogo</a>
+              <button class="btn btn-success btn-lg px-4" type="submit">Confirmar Encomenda via WhatsApp</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Carrega os dados do carrinho armazenados no navegador
+      document.addEventListener("DOMContentLoaded", () => {
+        const carrinho = JSON.parse(localStorage.getItem('agrofeira_carrinho')) || [];
+        const listaEl = document.getElementById('checkout-items-list');
+        const countEl = document.getElementById('checkout-count');
+        const totalEl = document.getElementById('checkout-total');
+
+        if (carrinho.length === 0) {
+          listaEl.innerHTML = '<li class="list-group-item text-muted text-center">Carrinho vazio.</li>';
+          return;
+        }
+
+        countEl.textContent = carrinho.reduce((sum, item) => sum + item.quantidade, 0);
+        
+        let total = 0;
+        listaEl.innerHTML = carrinho.map(item => {
+          const subtotal = item.preco * item.quantidade;
+          total += subtotal;
+          return `
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">${item.nome}</h6>
+                <small class="text-muted">Qtd: ${item.quantidade}</small>
+              </div>
+              <span class="text-muted">R$ ${subtotal.toFixed(2)}</span>
+            </li>
+          `;
+        }).join('');
+
+        totalEl.textContent = `R$ ${total.toFixed(2)}`;
+      });
+
+      function processarCheckout(event) {
+        event.preventDefault();
+        const nome = document.getElementById('nome').value;
+        const telefone = document.getElementById('telefone').value;
+        const endereco = document.getElementById('endereco').value;
+        const pagamento = document.getElementById('pix').checked ? 'PIX' : 'Dinheiro na Entrega';
+        
+        const carrinho = JSON.parse(localStorage.getItem('agrofeira_carrinho')) || [];
+        if (carrinho.length === 0) {
+          alert('O carrinho está vazio!');
+          return;
+        }
+
+        let total = 0;
+        let mensagem = `🛒 *Novo Pedido Confirmado - AgroFeira*%0A%0A`;
+        mensagem += `👤 *Cliente:* ${nome}%0A`;
+        mensagem += `📞 *Contacto:* ${telefone}%0A`;
+        mensagem += `📍 *Morada:* ${endereco}%0A`;
+        mensagem += `💳 *Pagamento:* ${pagamento}%0A%0A`;
+        mensagem += `*Itens do Pedido:*%0A`;
+
+        carrinho.forEach(item => {
+          const sub = item.preco * item.quantidade;
+          total += sub;
+          mensagem += `- ${item.nome} (${item.quantidade}x) - R$ ${sub.toFixed(2)}%0A`;
+        });
+
+        mensagem += `%0A*Total Geral: R$ ${total.toFixed(2)}*`;
+
+        const telefoneAdmin = "5591980622997";
+        window.open(`https://wa.me/${telefoneAdmin}?text=${mensagem}`, '_blank');
+        
+        // Limpa o carrinho após finalizar
+        localStorage.removeItem('agrofeira_carrinho');
+        window.location.href = 'catalogo-bootstrap.html';
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
